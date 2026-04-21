@@ -1,0 +1,88 @@
+# Build artifacts
+src/Structure/bin/
+src/Infrastructure/bin/
+src/API/obj/bin/
+src/Application/bin/
+src/Domain/bin/
+
+src/Infrastructure/obj/
+src/API/obj/obj/
+src/Application/obj/
+src/Structure/obj/
+src/Domain/obj/
+obj/
+bin/
+.vs/
+publish/
+packages/
+.idea/
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+
+# Visual Studio cache
+src/.vs/
+src/.vs
+
+# Logs
+*.log
+*.tlog
+
+# Publish outputs
+/publish/
+*.publishsettings
+
+# NuGet packages
+/packages/
+project.lock.json
+project.assets.json
+
+# Generated files
+Generated/
+*.g.cs
+
+# Database files
+*.mdf
+*.ldf
+
+#docker files - mumin
+/.devcontainer
+
+# Configuration files
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Temporary files
+*~
+*.tmp
+*.bak
+*.cache
+
+# IDE settings
+src/.idea/
+src/.vscode/
+
+# Api Config file
+src/API/appsettings.json
+
+# Domain Config file
+src/Domain/Shared/Settings/AppSettings.cs
+
+#deployment files
+src/API/Properties/PublishProfiles/
+
+# JetBrains Rider
+*.sln.iml
+*.sln.docstates
+
+# BizTalk build output
+*.btp.cs
+*.btm.cs
+*.odx.cs
+*.xsd.cs
+
+# Fody - auto-generated XML schema
+FodyWeavers.xsd

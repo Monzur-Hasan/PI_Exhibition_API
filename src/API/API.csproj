@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.Reporting" Version="2.1.0" />
+		<PackageReference Include="AspNetCore.ReportViewer" Version="3.0.0.200103" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.3.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="9.0.11" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.11" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.11" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.11" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.11" />
+		<PackageReference Include="Spire.PDF" Version="11.11.5" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.6" />
+		<PackageReference Include="System.CodeDom" Version="9.0.11" />
+		<PackageReference Include="System.Security.Permissions" Version="9.0.11" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Application\Application.csproj" />
+	</ItemGroup>
+
+</Project>

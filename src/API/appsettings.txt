@@ -1,0 +1,28 @@
+{
+  "AppSettings": {
+    "Environment": "Local" // Public // Local
+  },
+
+  "JwtSettings": {
+    "Issuer": "PIExhibition",
+    "Audience": "PIExhibitionClient",
+    "SecretKey": "02UL0/XC+Jq9bkVBERqF5GTJK8LnaMzx16by9C6GieuECu5eHh8PV47M7YAu4o8cPPTTZzZ/MUJbqyuM/cRkGPXQvPPU8+ry4yiPRUm9uy0=",
+    "AccessTokenMinutes": 60,
+    "RefreshTokenDays": 1
+  },
+
+  "FileUploadSettings": {
+    "BasePath": "C:\\PolockInteriorUploads\\"
+  },
+
+  "Cors": {
+    "ClientOrigin": "http://localhost:4200"
+  },
+
+  "ConnectionStrings": {
+    "DefaultConnection": "server=.;database=PolockInteriorExhibition;user id=sa;password=root;trusted_connection=false;multipleActiveResultSets=true;trust server certificate=true"
+
+    //"DefaultConnection": "server=188.68.38.113,1433\\MSSQLSERVER2022;database=PolockInteriorExhibition;user id=sa;password=Root@pass1;trusted_connection=false;multipleActiveResultSets=true;trust server certificate = true"
+ 
+  }
+}

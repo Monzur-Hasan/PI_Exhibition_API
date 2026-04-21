@@ -1,0 +1,151 @@
+using Domain.Shared.Settings.Url;
+
+namespace Domain.Shared.Settings
+{
+    public static class AppSettings
+    {
+        public static bool _isSandbox = true;  // false / true
+        public static string _sslStoreId = "proma6876185575a0b"; 
+        public static string _sslStorePassword = "proma6876185575a0b@ssl"; 
+
+        //internal static string apiUrl = ApiUrl.LiveServer;
+        //internal static string clientOrigin = ClientUrl.LiveServer;
+
+        //internal static string apiUrl = ApiUrl.LocalPCServer;
+        //internal static string clientOrigin = ClientUrl.LocalPCServer;
+
+        internal static string apiUrl = ApiUrl.LiveServer;
+        internal static string clientOrigin = ClientUrl.LiveServer;
+
+        public static string App_Environment => ConfigurationHelper.GetValue("App_Environment");
+        public static string Origin => ConfigurationHelper.GetValue("Clients:AngularClient:Url");
+     
+        public static bool EmailService
+        {
+            get
+            {
+                var value = ConfigurationHelper.GetValue("EmailService");
+                return value.ToLower() == "on";
+            }
+        }
+        public static string SymmetricSecurityKey
+        {
+            get
+            {
+                return "02UL0/XC+Jq9bkVBERqF5GTJK8LnaMzx16by9C6GieuECu5eHh8PV47M7YAu4o8cPPTTZzZ/MUJbqyuM/cRkGPXQvPPU8+ry4yiPRUm9uy0=";
+            }
+        }
+        public static string Key
+        {
+            get
+            {
+                return "7391824694761634";
+            }
+        }
+        public static string ClientOrigin
+        {
+            get
+            {
+                if (App_Environment != null)
+                {
+                    if (App_Environment == ApplicationEnvironment.Local)
+                    {
+                        return ClientUrl.Local;
+                    }
+                    else if (App_Environment == ApplicationEnvironment.Public)
+                    {
+                        return clientOrigin;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                return null;
+            }
+        }
+        // ----------------------- Starting .....................
+        // ----------------------------------------- Valid Issuer
+        public static string ApiValidIssuer
+        {
+            get
+            {
+                if (App_Environment != null)
+                {
+                    if (App_Environment == ApplicationEnvironment.Local)
+                    {
+                        return ApiUrl.Local;
+                    }
+                    else if (App_Environment == ApplicationEnvironment.Public)
+                    {
+                        return apiUrl;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                return null;
+            }
+        }
+        // ----------------------------------------- Valid Audience
+        public static string ApiValidAudience
+        {
+            get
+            {
+
+                if (App_Environment != null)
+                {
+                    if (App_Environment == ApplicationEnvironment.Local)
+                    {
+                        return ApiUrl.Local;
+                    }
+                    else if (App_Environment == ApplicationEnvironment.Public)
+                    {
+                        return apiUrl;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                return null;
+            }
+        }
+        // ----------------------- Ending .....................
+        public static string ConnectionString(string dbName)
+        {
+            if (apiUrl == ApiUrl.LiveServer)
+            {
+                return string.Format(@"server=188.68.38.113,1433;database=CloudPos;user id=sa;password=Root@pass1;trusted_connection=false;multipleActiveResultSets=true;trust server certificate = true", dbName, "Root@pass1");
+            }
+            return "";
+        }
+
+
+        // Hard-coded token expiration times
+        public static int AccessTokenExpirationMinutes
+        {
+            get
+            {
+                return 60; // Access token valid for 2 minutes
+            }
+        }
+
+        public static int RefreshTokenExpirationMinutes
+        {
+            get
+            {
+                return 120; // Refresh token valid for 5 minutes
+            }
+        }
+        public static int RefreshTokenExpirationDays
+        {
+            get
+            {
+                return 1; // Refresh token valid for 1 days
+            }
+        }
+
+    }
+}
